@@ -1,6 +1,8 @@
 from collections import deque
 
-#BFS 메서드 정의
+# BFS 메서드 정의
+
+
 def bfs(graph, start, visited):
     queue = deque([start])
     visited[start] = True
@@ -14,17 +16,18 @@ def bfs(graph, start, visited):
                 queue.append(i)
                 visited[i] = True
 
+
 bfs([
     [],
-    [2,3,8],
-    [1,7],
-    [1,4,5],
-    [3,5],
-    [3,4],
+    [2, 3, 8],
+    [1, 7],
+    [1, 4, 5],
+    [3, 5],
+    [3, 4],
     [7],
-    [2,6,8],
-    [1,7]
-    ], 1, [False] * 9)
+    [2, 6, 8],
+    [1, 7]
+], 1, [False] * 9)
 
 # graph = [
 #     [],
@@ -39,5 +42,3 @@ bfs([
 # ]
 
 # visited = [False] * 9
-
-
