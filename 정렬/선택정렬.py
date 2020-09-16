@@ -1,3 +1,5 @@
+# N제곱의 효율성
+
 array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
 
 for i in range(len(array)):
