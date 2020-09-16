@@ -10,7 +10,7 @@ def quick_sort(array, start, end):
         return
 
     pivot = start  # 피벗은 첫번째 원소 # 0
-    left = start + 1  # 1
+    left = start + 1  # 1 => 0번째 자리를 pivot으로 삼았으므로 그 왼쪽 편은 1번째 위치부터 시작함
     right = end  # 9
 
     while left <= right:
