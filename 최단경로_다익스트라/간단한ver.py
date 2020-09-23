@@ -32,6 +32,7 @@ def get_smallest_node():
     index = 0  # 가장 최단거리가 짧은 노드(인덱스)
     for i in range(1, n+1):
         if distance[i] < min_value and not visited[i]:
+            print(distance[i], "<", min_value)
             min_value = distance[i]
             index = i
 
@@ -42,3 +43,34 @@ def dijkstara(start):
     # 시작 노드에 대해서 초기화
     distance[start] = 0
     visited[start] = True
+
+    for j in graph[start]:
+        print("graph[start]:", graph[start], "j: ", j,
+              "distance[j[0]]: ", distance[j[0]], "j[1]: ", j[1])
+        distance[j[0]] = j[1]
+
+    # 시작 노드를 제외한 전체 n-1 개의 노드에 대해 반복
+    for _ in range(n-1):
+        # 현재 최단 거리가 가장 짧은 노드를 꺼내서, 방문처리
+        now = get_smallest_node()
+        visited[now] = True
+        # 현재 노드와 연결된 다르 노드를 확인
+        for j in graph[now]:
+            cost = distance[now] + j[1]
+            # 현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧은 경우
+            if cost < distance[j[0]]:
+                distance[j[0]] = cost
+
+
+# 다익스트라 알고리즘 수행
+dijkstara(start)
+
+# 모든 노드로 가기 위한 최단거리를 출력
+for i in range(1, n+1):
+    # 도달할 수 없는 경우 "INFINITY"를 출력
+    if distance[i] == INF:
+        print("INFINITY")
+
+    # 도달할 수 있는 경우 거리를 출력
+    else:
+        print(distance[i])
