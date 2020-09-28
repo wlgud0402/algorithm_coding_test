@@ -32,10 +32,11 @@ def get_smallest_node():
     index = 0  # 가장 최단거리가 짧은 노드(인덱스)
     for i in range(1, n+1):
         if distance[i] < min_value and not visited[i]:
-            print(distance[i], "<", min_value)
+            print("i: ",i ,distance[i], "<", min_value)
             min_value = distance[i]
             index = i
-
+    
+    print("index: ", index)
     return index
 
 
