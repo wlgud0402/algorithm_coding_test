@@ -1,6 +1,4 @@
 def solution(n, plans):
-    x, y = 1, 1
-
     map_size = []
     for j in range(1, n+1):
         map_size.append([[j, i] for i in range(1, n + 1)])
