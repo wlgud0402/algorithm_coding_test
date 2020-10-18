@@ -7,10 +7,13 @@ def fibo(x):
     if x == 1 or x == 2:
         return 1
 
-    if d[x] != 0:
+    if d[x] != 0:  # 이미 등록되어 있다면 있는 값으로ㄴ
+        print("1", x, d[x])
         return d[x]
 
+    # 없다면 값은 전전항과 전항의 합
     d[x] = fibo(x-1) + fibo(x-2)
+    print("2", x, d[x])
     return d[x]
 
 
